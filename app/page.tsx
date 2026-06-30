@@ -58,7 +58,7 @@ export default function Home() {
       ]);
     } catch (e: any) {
       setError(e.message || 'Something went wrong');
-      setMessages((prev) => prev.slice(0, -1)); // roll back user message on failure
+      setMessages((prev) => prev.slice(0, -1));
     } finally {
       setLoading(false);
     }
@@ -77,7 +77,6 @@ export default function Home() {
 
   return (
     <main className="flex h-screen w-full overflow-hidden">
-      {/* Chat panel */}
       <div className="flex w-[400px] min-w-[340px] flex-col border-r border-zinc-800 bg-zinc-950">
         <div className="flex items-center justify-between border-b border-zinc-800 px-5 py-4">
           <div>
@@ -179,7 +178,6 @@ export default function Home() {
         </form>
       </div>
 
-      {/* Preview panel */}
       <div className="flex flex-1 flex-col bg-zinc-900">
         <div className="flex items-center justify-between border-b border-zinc-800 px-4 py-2">
           <div className="flex gap-1 rounded-lg bg-zinc-950 p-1">
@@ -217,7 +215,7 @@ export default function Home() {
           )}
           {html && activeTab === 'preview' && (
             <iframe
-              key={html.length /* force refresh on change */}
+              key={html.length}
               srcDoc={html}
               sandbox="allow-scripts"
               className="h-full w-full border-0"
