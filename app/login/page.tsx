@@ -38,3 +38,5 @@ export default function LoginPage() {
     </main>
   );
 }
+
+export const dynamic = 'force-dynamic';
